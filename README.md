@@ -38,6 +38,68 @@ RKCLLocationValueTransformer *locationValueTransformer = [RKCLLocationValueTrans
 [[RKValueTransformer defaultValueTransformer] addValueTransformer:locationValueTransformer];
 ```
 
+### Integration with RestKit
+
+**Requires RestKit v0.21.0 and up***
+
+The `RKCLLocationValueTransformer` class is primarily designed for use with RestKit to enable the object mapping of coordinate data in an API. To do so you must configure
+the `RKAttributeMapping` for the `CLLocation` property to use the value transformer. The examples below detail how to make this configuration.
+
+#### Mapping from JSON to a CLLocation Property
+
+```json
+{
+    "user": {
+        "name": "Blake Watters",
+        "location": {
+            "latitude": "40.708",
+            "longitude": "74.012"
+        }
+    }
+}
+```
+
+Given the above JSON, you could configure an object mapping and request descriptor to access the data as follows:
+
+```objc
+#import "RKCLLocationValueTransformer.h"
+
+@interface User : NSObject
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) CLLocation *location;
+@end
+
+RKObjectMapping *userMapping = [RKObjectMapping mappingForClass:[User class]];
+[userMapping addAttributeMappingsFromArray:@[ @"name" ]];
+RKAttributeMapping *attributeMapping = [RKAttributeMapping attributeMappingFromKeyPath:@"location" toKeyPath:@"location"];
+attributeMapping.valueTransformer = [RKCLLocationValueTransformer locationValueTransformerWithLatitudeKey:@"latitude" longitudeKey:@"longitude"];
+[userMapping addPropertyMapping:attributeMapping];
+
+RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:userMapping method:RKRequestMethodAny pathPattern:nil keyPath:@"user" statusCodes:[NSIndexSet indexSetWithIndex:200]];
+```
+
+Upon successful completion of the request, an instance of the `User` object would be created and the `name` attribute would equal `@"Blake Watters"` and the `location` attribute would be a `CLLocation` instance
+whose `latitude` and `longitude` properties are equal to `40.708` and `74.012` respectively.
+
+#### Mapping from a CLLocation Property to HTTP Parameters
+
+Mapping from your local domain object back into an `NSDictionary` for use with a `PUT`, `POST`, or `PATCH` operation requires slightly more configuration. Because there are no type hints availabe when mapping
+from a local object into an `NSDictionary` (as there are no properties to introspect) we must explicitly tell RestKit how we want the `CLLocation` object represented so that the value transformer can handle it:
+
+```objc
+RKObjectMapping *userRequestMapping = [RKObjectMapping requestMapping];
+[userRequestMapping addAttributeMappingsFromArray:@[ @"name" ]];
+RKAttributeMapping *attributeMapping = [RKAttributeMapping attributeMappingFromKeyPath:@"location" toKeyPath:@"location"];
+attributeMapping.propertyValueClass = [NSDictionary class];
+attributeMapping.valueTransformer = [RKCLLocationValueTransformer locationValueTransformerWithLatitudeKey:@"latitude" longitudeKey:@"longitude"];
+[userRequestMapping addPropertyMapping:attributeMapping];
+
+NSError *error = nil;
+RKRequestDescriptor *requestDescriptor = [RKRequestDescriptor requestDescriptorWithMapping:userRequestMapping objectClass:[User class] rootKeyPath:@"user" method:RKRequestMethodAny];
+```
+
+Upon performing a `POST` or `PUT` of the `User` object you would wind up with a JSON or URL form-encoded representation that matches the original JSON example given above.
+
 ## Credits
 
 Blake Watters
