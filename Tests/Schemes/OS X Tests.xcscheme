@@ -19,7 +19,7 @@
                BlueprintIdentifier = "25A0136217DBC225006C2BD6"
                BuildableName = "OS X Tests.octest"
                BlueprintName = "OS X Tests"
-               ReferencedContainer = "container:ISO8601DateFormatterValueTransformerTests.xcodeproj">
+               ReferencedContainer = "container:RKCLLocationValueTransformerTests.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
