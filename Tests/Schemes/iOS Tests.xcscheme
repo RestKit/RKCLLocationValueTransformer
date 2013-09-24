@@ -19,7 +19,7 @@
                BlueprintIdentifier = "25A0134717DBC212006C2BD6"
                BuildableName = "iOS Tests.octest"
                BlueprintName = "iOS Tests"
-               ReferencedContainer = "container:RKCLLocationValueTransformerTests..xcodeproj">
+               ReferencedContainer = "container:RKCLLocationValueTransformerTests.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
