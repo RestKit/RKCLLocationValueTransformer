@@ -1,5 +1,9 @@
 RKCLLocationValueTransformer
-====================================
+============================
+
+[![Build Status](https://travis-ci.org/RestKit/RKCLLocationValueTransformer.png?branch=master)](https://travis-ci.org/RestKit/RKCLLocationValueTransformer)
+![Pod Version](http://cocoapod-badges.herokuapp.com/v/RKCLLocationValueTransformer/badge.png)
+![Pod Platform](http://cocoapod-badges.herokuapp.com/p/RKCLLocationValueTransformer/badge.png)
 
 **An `RKValueTransforming` compliant class for transforming values between `NSDictionary` and `CLLocation` representations of a geographic coordinate.**
 
