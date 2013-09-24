@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		25958EE117F1145400B9645B /* RKCLLocationValueTransformerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 25958EE017F1145400B9645B /* RKCLLocationValueTransformerTests.m */; };
+		25958EE217F1145400B9645B /* RKCLLocationValueTransformerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 25958EE017F1145400B9645B /* RKCLLocationValueTransformerTests.m */; };
 		25A0134C17DBC212006C2BD6 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25A0134B17DBC212006C2BD6 /* SenTestingKit.framework */; };
 		25A0134E17DBC212006C2BD6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25A0134D17DBC212006C2BD6 /* UIKit.framework */; };
 		25A0135017DBC212006C2BD6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25A0134F17DBC212006C2BD6 /* Foundation.framework */; };
@@ -19,6 +21,7 @@
 /* Begin PBXFileReference section */
 		169BB4EE1051441592FCCA22 /* libPods-osx.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-osx.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		193F69FEEBC443C283E5F0E4 /* Pods-ios.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios.xcconfig"; path = "../Pods/Pods-ios.xcconfig"; sourceTree = "<group>"; };
+		25958EE017F1145400B9645B /* RKCLLocationValueTransformerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKCLLocationValueTransformerTests.m; sourceTree = "<group>"; };
 		25A0134817DBC212006C2BD6 /* iOS Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS Tests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		25A0134B17DBC212006C2BD6 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		25A0134D17DBC212006C2BD6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -61,6 +64,7 @@
 		25A0133C17DBC1F4006C2BD6 = {
 			isa = PBXGroup;
 			children = (
+				25958EE017F1145400B9645B /* RKCLLocationValueTransformerTests.m */,
 				25A0134A17DBC212006C2BD6 /* Frameworks */,
 				25A0134917DBC212006C2BD6 /* Products */,
 				193F69FEEBC443C283E5F0E4 /* Pods-ios.xcconfig */,
@@ -282,6 +286,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25958EE117F1145400B9645B /* RKCLLocationValueTransformerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +294,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25958EE217F1145400B9645B /* RKCLLocationValueTransformerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
