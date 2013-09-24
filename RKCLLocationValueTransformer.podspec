@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.summary  = 'An RKValueTransformer for transforming between NSDictionary and CLLocation representations of a geographical coordinate.'
   s.homepage = 'https://github.com/RestKit/RKCLLocationValueTransformer'
   s.authors  = { 'Blake Watters' => 'blakewatters@gmail.com' }
-  s.source   = { :git => 'https://github.com/RestKit/ISO8601DateFormatterValueTransformer.git', :tag => "v#{s.version}" }
+  s.source   = { :git => 'https://github.com/RestKit/RKCLLocationValueTransformer.git', :tag => "v#{s.version}" }
   s.source_files = 'Code'
   s.requires_arc = true
   
