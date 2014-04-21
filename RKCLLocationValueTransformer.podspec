@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name     = 'RKCLLocationValueTransformer'
-  s.version  = '1.0.0'
+  s.version  = '1.1.0'
   s.license  = 'Apache2'
   s.summary  = 'An RKValueTransformer for transforming between NSDictionary and CLLocation representations of a geographical coordinate.'
   s.homepage = 'https://github.com/RestKit/RKCLLocationValueTransformer'
@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
   s.source_files = 'Code'
   s.requires_arc = true
   
-  s.dependency 'RKValueTransformers', '~> 1.0.0'
+  s.dependency 'RKValueTransformers', '~> 1.1.0'
   s.framework  = 'CoreLocation'
 
   s.ios.deployment_target = '5.0'
