@@ -18,12 +18,12 @@
 //  limitations under the License.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 #define EXP_SHORTHAND
 #import "Expecta.h"
 #import "RKCLLocationValueTransformer.h"
 
-@interface RKCLLocationValueTransformerTests : SenTestCase
+@interface RKCLLocationValueTransformerTests : XCTestCase
 @end
 
 @implementation RKCLLocationValueTransformerTests
